@@ -6,6 +6,9 @@ variable "availability_zone" {
   type = list(string)
 }
 
+variable "cidr_block" {
+  type = string
+}
 variable "key_name" {
   type = string
 }
@@ -34,14 +37,14 @@ variable "webserver_sg_rules" {
         from_port   = 22
         to_port     = 22
         protocol    = "tcp"
-        cidr_blocks = ["134.238.14.56/32"] # <- replace with your own workstation IP
+        cidr_blocks = ["134.238.14.57/32"] # <- replace with your own workstation IP
       },
       {
         description = "80 from public subnets"
         from_port   = 80
         to_port     = 80
         protocol    = "tcp"
-        cidr_blocks = ["10.0.1.0/24"]
+        cidr_blocks = ["0.0.0.0"]
       }
     ]
     egress_rules = [
