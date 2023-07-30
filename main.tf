@@ -49,7 +49,7 @@ resource "aws_route_table" "route_table1" {
   vpc_id = aws_vpc.test_vpc.id
 
   route {
-    cidr_block = "0.0.0.0"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.test_internet_gateway.id
   }
   tags = {
